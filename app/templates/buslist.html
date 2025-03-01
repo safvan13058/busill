@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" href="{%static 'app1/css/index.css'%}">
+    <link rel="stylesheet" href="{%static 'app1/css/bus.css'%}">
+    <link rel="icon" type="image/x-icon" href="{%static 'app1/pic/busillogow.png'%}">
+    <title>Bus list</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav">
+            {% load static%}
+            <div class="logs"><img src="{%static 'app1/pic/busillogos.png'%}" alt=""> <div class="logo">𝗕𝘂𝘀𝗶𝗹𝗹</div></div>
+            <div class="loc">
+                <div class="loclogo"><img src="{%static 'app1/pic/location1.png'%}" alt=""></div>
+                <div class="locname" id="output"></div>
+            </div>
+        </div>
+
+    </nav>
+    
+     <!-- ------------------------------------end from to--------------------------------------- -->
+      <!-- --------------fto------------------------------------- -->
+     <div class="locs">
+        <div class="fto2">
+            <div class="coft">
+                <div class="fcon"><div class="logloc"><img src="{% static 'app1/pic/loc1.png'%}" alt=""></div><div class="fromname" id="fromtitle">Kottakal</div></div>
+                <div class="toname">To</div>
+                <div class="fcon"><div class="logloc"><img src="{% static 'app1/pic/loc1.png'%}" alt=""></div><div class="fromname" id="totitle">Tirur</div></div>
+            </div>
+        </div>
+     </div>
+     <!-- -----------------end fto--------------------- -->
+      <!-- ----------------------------buslist--------------------------- -->
+      <div class="container">
+        <div class="buscard">
+            <div class="card">
+            <div class="busimg"><img src="{%static 'app1/pic/buss.png'%}" alt=""></div>
+            <div class="busdetails">
+                <div class="bname"><h3>Loading....</h3></div>
+                <div class="bplace"><p>Loading....</p></div>
+                <div class="bnumber"><p>Loading....</p></div>
+                <div class="bbtn"><button type="button" data-bus-id="Loading...." onclick="redirectToTrackingPage(this)"><img src="{% static 'app1/pic/loc1.png'%}" alt=""><h3>Live Tracking</h3></button></div>
+                <!-- <div class="bbtn"><button  type="button" onclick="window.location.href='{% url 'trackingpage' %}'"><img src="{% static 'app1/pic/loc1.png'%}" alt=""><h3>Live Tracking</h3></button></div> --> 
+            </div>
+            </div>
+        </div>
+      </div> 
+    
+     <!-- -------------------------------bottom bar----------------------------------------- -->
+     
+     <div class="bottombar">
+        <div class="bottombtn">
+            <div> <a href="{% url 'indexpage' %}"> <img src="{%static 'app1/pic/home.png'%}" alt=""></a></div>
+            <div> <a href="{% url 'mappage' %}"><img src="{%static 'app1/pic/map.png'%}" alt=""></a></div>
+            <div> <a href="{% url 'buspage' %}"><img src="{%static 'app1/pic/bus-alt.png'%}" alt=""></a></div>
+            <div> <a href="{% url 'profilepage' %}"><img src="{%static 'app1/pic/user.png'%}" alt=""></a></div>
+        </div>
+
+     </div>
+
+
+
+     <!-- <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVHXAjg4mpK11K-Dqjey1OrGNRNXDeP3o"></script> -->
+     <!-- <script src="{% static 'app1/js/currentlocation.js' %}"></script> -->
+     <!-- <script src="{% static 'app1/js/locmap.js' %}"></script> -->
+    <script src="{% static 'app1/js/getloc.js' %}"></script>
+  <script>
+
+    const fromss=document.getElementById('fromtitle')
+    const tos=document.getElementById('totitle')
+
+    function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get busId and route from the URL
+        const from = getQueryParam("from");
+        const to = getQueryParam("to");
+
+
+
+        if (from && to) {
+            console.log("from:", from);  // For debugging
+            console.log("to:", to); 
+            fromss.innerHTML=from;
+            tos.innerHTML=to;
+            fetchBus(from, to)
+              
+            
+        } 
+        else {
+            console.error("Bus ID or Route is missing from the URL.");
+        }
+
+        async function fetchBus(from, to) {
+    console.log(`Fetching buses from ${from} to ${to}`);
+
+    try {
+        const response = await fetch(`/api/buslist/${from}/${to}/`);
+
+        if (response.ok) {
+            const buses = await response.json();
+            console.log('Fetched buses:', buses);
+
+            const container = document.querySelector('.container');
+            container.innerHTML = '';  // Clear existing buses
+
+            if (buses.length > 0) {
+                buses.forEach(bus => {
+                    const busCard = `
+                        <div class="buscard">
+                            <div class="card">
+                                <div class="busimg">
+                                    <img src="{% static 'app1/pic/buss.png' %}" alt="Bus Image">
+                                </div>
+                                <div class="busdetails">
+                                    <div class="bname"><h3>${bus.Busname}</h3></div>
+                                    <div class="bplace">
+                                        <p>${bus.route_start} - ${bus.route_end}</p>
+                                    </div>
+                                    <div class="bnumber">
+                                        <p>Bus No: ${bus.Bus_NO}</p>
+                                    </div>
+                                    <div class="bbtn">
+                                        <button type="button" data-bus-id="${bus.id}" onclick="redirectToTrackingPage(this)">
+                                            <img src="{% static 'app1/pic/loc1.png' %}" alt="Live Tracking">
+                                            <h3>Live Tracking</h3>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += busCard;
+                });
+            } else {
+                container.innerHTML = '<p>No buses are currently available for this route.</p>';
+            }
+        } else {
+            console.error("No buses found.");
+        }
+    } catch (error) {
+        console.error("Failed to fetch buses:", error);
+    }
+}
+
+
+
+
+    function redirectToTrackingPage(button) {
+        const busId = button.getAttribute("data-bus-id");
+        window.location.href = `/bustracking?busId=${busId}`;
+    }
+  </script>
+</body>
+</html>

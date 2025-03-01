@@ -1,0 +1,112 @@
+
+*{
+    margin:0;
+    padding: 0;
+}
+.locs{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}.fto2{
+    /* background-color: rgba(66, 26, 226, 1); */
+    background-color: #20005B ;
+    border-radius: 14px;
+    border: 2px solid;
+    height: 65px;
+    width: 360px;
+    align-content: center;
+
+}
+.fromname{
+    white-space: nowrap;
+    width: 70px;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+    overflow-x: auto;
+}
+.fromname::-webkit-scrollbar-thumb {
+    display: none;
+    opacity: 0;
+}
+
+.fromname::-webkit-scrollbar {
+    opacity: 0;
+    display: none; /* Adjust scrollbar height */
+}
+.fcon{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 3px 20px;
+    align-items: center;
+    gap:5px;
+    width: 100px;
+    height: 26px;
+}
+.coft{
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+.logloc img{
+    width: 25px;
+    height: 25px;
+}
+.toname{
+    font-size: 18;
+    font-weight: 900;
+}
+/* -----------------end fto--------------------- */
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+.buscard{
+    width: 360px;
+    
+    background-color: white;
+    border: 1px solid;
+    border-radius: 14px;
+    box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 1);
+}
+.busimg img{
+    width: 98px;
+    height: 98px;
+}
+.buscard .card{
+    display: flex;
+    flex-direction: row;
+    gap:20px
+}
+.bbtn {
+    margin-top: 5px;
+}
+.bbtn button{
+    padding: 3px 10px;
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    border-radius: 6px;
+    background-color: rgba(255, 1, 1, .5);
+    border: 2px solid #FF0000;
+}
+.bbtn button img {
+    width: 20px;
+    height: 20px;
+}
+.card{
+    padding: 10px;
+}
+.toname{
+    color: white;
+    font-weight: 900;
+}

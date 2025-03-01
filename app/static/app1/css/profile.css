@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.profiles{
+    display: flex;
+    justify-content: center;
+}
+.Profile{
+    margin-top: 10px;
+    border: 1px solid ;
+    padding: 0 80px;
+    border-radius: 14px;
+
+}
+.edit button{
+
+    padding:3px 10px ;
+    font-weight: 900;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(68, 68, 255);
+
+}
+.proall{
+  padding: 30px;
+}
+.profilediv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+}
+.img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+.name{
+    text-align: center;
+    font-weight: 900;
+}
+.edit{
+    text-align: center;
+}
+.contant{
+ margin-bottom: 10px;
+}
+.contant div{
+    border-top:1px solid;
+    border-bottom:1px solid;
+    padding: 10px;
+    font-weight: 900;
+
+}
+.dc{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.dc img{
+    width: 20px;
+    height: 20px;
+}
+.contant div:hover{
+    color: blue;
+    background-color: rgba(240, 248, 255,.8);
+}

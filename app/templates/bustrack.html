@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+                <link rel="stylesheet" href="{%static 'app1/css/index.css'%}">
+                <link rel="stylesheet" href="{%static 'app1/css/bus.css'%}">
+                <link rel="stylesheet" href="{%static 'app1/css/bustrack.css'%}">
+                <link rel="icon" type="image/x-icon" href="{%static 'app1/pic/busillogow.png'%}">
+    <title>Bus Tracking</title>
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <div class="nav">
+          {% load static%}
+          <div class="logs"><img src="{%static 'app1/pic/busillogos.png'%}" alt=""> <div class="logo">𝗕𝘂𝘀𝗶𝗹𝗹</div></div>
+            <div class="loc">
+             
+                <div class="loclogo"><img src="{%static 'app1/pic/location1.png'%}" alt=""></div>
+                <div class="locname" id="output"></div>
+            </div>
+        </div>
+
+    </nav>
+     <!-- ------------------------------------end from to--------------------------------------- -->
+      <!-- ----------------------------buslist--------------------------- -->
+      <div class="container">
+        <div class="buscard">
+            <div class="card">
+            <div class="busimg"><img src="{%static 'app1/pic/buss.png'%}" alt=""></div>
+            <div class="busdetails">
+                <div class="bname" ><h3 id="busname">Koodath</h3></div>
+                <div class="bplace" ><p id="busplace">Tirur-kadagathkund-kottakal</p></div>
+                <div class="bnumber" ><p id="busno">KL 55 AX 2030</p></div>
+                <div class="currentloc"><h4 class="n">Location :</h4><p class="currentplc" id="cp">Parapur</p></div>
+
+            </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- ----------------------------end bus card---------------------------------------------- -->
+       <div class="trackcontainer">
+        <!-- <div class="mapsss"><a href="{%url 'bussinglepage'%}"><img src="{%static 'app1/pic/map1.png'%}" alt=""></a></div> -->
+        <div class="mapsss"><a data-bus-id="1" onclick="redirectToTrackingPage(this)"><img src="{%static 'app1/pic/map1.png'%}" alt=""></a></div>
+      <div class="timeline-container">
+        <div class="timeline">
+          <div class="line"><div class="bus"><img src="{%static 'app1/pic/buss.png'%}" alt=""></div></div>
+          <div class="all">
+            <div class="stop">
+                <div class="tym"><img src="{%static 'app1/pic/clock.png'%}" alt=""><span class="time">2:00 pm</span></div>
+                <div class="spot"><div class="circle "></div><img src="{%static 'app1/pic/bus.png'%}" alt=""></div>
+                <div class="plc"><img src="{%static 'app1/pic/leftarrow.gif'%}" alt=""><span class="location">Changuvetty</span></div>
+              </div>
+               
+              
+             
+                <!-- <div class="stop"> -->
+                    <!-- <div class="tym"><img src="{%static 'app1/pic/clock.png'%}" alt=""><span class="time">2:00 pm</span></div>
+                    <div class="spot"><div class="circle "></div><img src="{%static 'app1/pic/bus-stop.png'%}" alt=""></div>
+                    <div class="plc"><img src="{%static 'app1/pic/leftarrow.gif'%}" alt=""><span class="location">Changuvetty</span></div>
+                  </div>
+
+
+                  - ----------------------------------------------------- -->
+                  <!-- <div class="stop">
+                    <div class="tym"><img src="{%static 'app1/pic/clock.png'%}" alt=""><span class="time">2:00 pm</span></div>
+                    <div class="spot"><div class="circle "></div><img src="{%static 'app1/pic/bus-stop.png'%}" alt=""></div>
+                    <div class="plc"><img src="{%static 'app1/pic/leftarrow.gif'%}" alt=""><span class="location">Changuvetty</span></div>
+                  </div>
+                  <div class="stop">
+                    <div class="tym"><img src="{%static 'app1/pic/clock.png'%}" alt=""><span class="time">2:00 pm</span></div>
+                    <div class="spot"><div class="circle "></div><img src="{%static 'app1/pic/bus-stop.png'%}" alt=""></div>
+                    <div class="plc"><img src="{%static 'app1/pic/leftarrow.gif'%}" alt=""><span class="location">Changuvetty</span></div>
+                  </div>
+                  <div class="stop">
+                    <div class="tym"><img src="{%static 'app1/pic/clock.png'%}" alt=""><span class="time">2:00 pm</span></div>
+                    <div class="spot"><div class="circle "></div><img src="{%static 'app1/pic/bus-stop.png'%}" alt=""></div>
+                    <div class="plc"><img src="{%static 'app1/pic/leftarrow.gif'%}" alt=""><span class="location">Changuvetty</span></div>
+                  </div>
+                  <div class="stop">
+                    <div class="tym"><img src="{%static 'app1/pic/clock.png'%}" alt=""><span class="time">2:00 pm</span></div>
+                    <div class="spot"><div class="circle "></div><img src="{%static 'app1/pic/bus-stop.png'%}" alt=""></div>
+                    <div class="plc"><img src="{%static 'app1/pic/leftarrow.gif'%}" alt=""><span class="location">Changuvetty</span></div>
+                  </div>
+                  <div class="stop">
+                    <div class="tym"><img src="{%static 'app1/pic/clock.png'%}" alt=""><span class="time">2:00 pm</span></div>
+                    <div class="spot"><div class="circle"></div><img src="{%static 'app1/pic/bus-stop.png'%}" alt=""></div>
+                    <div class="plc"><img src="{%static 'app1/pic/leftarrow.gif'%}" alt=""><span class="location">Changuvetty</span></div>
+                  </div>
+                  <div class="stop">
+                    <div class="tym"><img src="{%static 'app1/pic/clock.png'%}" alt=""><span class="time">2:00 pm</span></div>
+                    <div class="spot"><div class="circle "></div><img src="{%static 'app1/pic/bus-stop.png'%}" alt=""></div>
+
+                    <div class="plc"><img src="{%static 'app1/pic/leftarrow.gif'%}" alt=""><span class="location">Changuvetty</span></div>
+                  </div>
+                  <div class="stop">
+                    <div class="tym"><img src="{%static 'app1/pic/clock.png'%}" alt=""><span class="time">2:00 pm</span></div>
+                    <div class="spot"><div class="circle "></div><img src="{%static 'app1/pic/bus-stop.png'%}" alt=""></div>
+                    <div class="plc"><img src="{%static 'app1/pic/leftarrow.gif'%}" alt=""><span class="location">Changuvetty</span></div>
+                  </div> -->
+            
+                  
+<!-- ------------------------------------------------------------------------------------------------------------             -->
+             
+
+              <!-- <div class="stop">
+                <div class="tym"><img src="{%static 'app1/pic/clock.png'%}" alt=""><span class="time">2:00 pm</span></div>
+                <div class="spot"><div class="circle "></div><img src="{%static 'app1/pic/bus.png'%}" alt=""></div>
+                <div class="plc"><img src="{%static 'app1/pic/leftarrow.gif'%}" alt=""><span class="location">Changuvetty</span></div>
+              </div> -->
+            </div>  
+        </div>
+
+      </div>
+      </div>
+
+     <!-- -------------------------------bottom bar----------------------------------------- -->
+     
+     <div class="bottombar">
+        <div class="bottombtn">
+            <div> <a href="{% url 'indexpage' %}"> <img src="{%static 'app1/pic/home.png'%}" alt=""></a></div>
+            <div> <a href="{% url 'mappage' %}"><img src="{%static 'app1/pic/map.png'%}" alt=""></a></div>
+            <div> <a href="{% url 'buspage' %}"><img src="{%static 'app1/pic/bus-alt.png'%}" alt=""></a></div>
+            <div> <a href="{% url 'profilepage' %}"><img src="{%static 'app1/pic/user.png'%}" alt=""></a></div>
+        </div>
+
+     </div>
+
+
+    <script src="{% static 'app1/js/getloc.js' %}"></script>
+    <!-- <script src="{% static 'app1/js/busline.js' %}"></script> -->
+    <script src="{% static 'app1/js/bustracking.js' %}"></script>
+    <script>
+      logos={
+        clock:"{% static 'app1/pic/clock.png' %}",
+        busstop:"{% static 'app1/pic/bus-stop.png' %}",
+        arrow:"{% static 'app1/pic/leftarrow.gif' %}",
+      }
+    </script>
+     <script>
+      function redirectToTrackingPage(button) {
+          const busId = button.getAttribute("data-bus-id");
+          window.location.href = `/bussingle?busId=${busId}`;
+      }
+    </script>
+
+</body>
+
+
+</html>

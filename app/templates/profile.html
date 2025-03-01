@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    {% load static%}
+    <link rel="stylesheet" href="{%static 'app1/css/index.css'%}">
+    <link rel="stylesheet" href="{%static 'app1/css/Profile.css'%}">
+    <link rel="icon" type="image/x-icon" href="{%static 'app1/pic/busillogow.png'%}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav">
+            {% load static%}
+           <div class="logs"><img src="{%static 'app1/pic/busillogos.png'%}" alt=""> <div class="logo">𝗕𝘂𝘀𝗶𝗹𝗹</div></div>
+            <div class="loc">
+               
+                <div class="loclogo"><img src="{%static 'app1/pic/location1.png'%}" alt=""></div>
+                <div class="locname" id="output"></div>
+            </div>
+        </div>
+
+    </nav>
+    <!-- ........................................................................................................ -->
+    <div class="profiles">
+    <div class="Profile">
+        <div class="proall">
+          <div class="profilediv">
+            <div class="img">
+                <img src="" alt="">
+            </div>
+            <div class="name">Mohamed safvan vp</div>
+            <!-- <div class="edit"><button>Edit</button></div> -->
+          </div>
+        </div>
+
+
+
+        <div class="contant">
+            
+            <div class="dc"><img src="{%static 'app1/pic/social-page.gif'%}" alt=""><span>Overview</span></div>
+            <div class="dc"><img src="{%static 'app1/pic/options.gif'%}" alt=""><span>Account settings</span></div>
+            <div class="dc"><img src="{%static 'app1/pic/online-ticket.gif'%}" alt=""><span>Tickets</span></div>
+            <div class="dc"><img src="{%static 'app1/pic/history.gif'%}" alt=""><span>History</span></div>
+            <div class="dc"><img src="{%static 'app1/pic/helpdesk.gif'%}" alt=""><span>Help</span></div>
+            <div class="dc"><img src="{%static 'app1/pic/document.gif'%}" alt=""><span>policy & privacy </span></div>
+
+        </div>
+
+
+
+     </div>
+     </div>
+     
+
+
+
+     <!-- ------------------------------------end from to--------------------------------------- -->
+     <div class="bottombar">
+        <div class="bottombtn">
+            <div> <a href="{% url 'indexpage' %} "> <img src="{%static 'app1/pic/home.png'%}" alt=""></a></div>
+            <div> <a href="{% url 'mappage' %}"><img src="{%static 'app1/pic/map.png'%}" alt=""></a></div>
+            <div> <a href="{% url 'buspage' %}"><img src="{%static 'app1/pic/bus-alt.png'%}" alt=""></a></div>
+            <div> <a href="{% url 'profilepage' %}"><img src="{%static 'app1/pic/user.png'%}" alt=""></a></div>
+        </div>
+
+     </div>
+
+
+     <script src="{% static 'app1/js/getloc.js' %}"></script>
+    
+</body>
+</html>
