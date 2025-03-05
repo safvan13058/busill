@@ -1,0 +1,73 @@
+:root {
+    --primary-color: #FF6F61; /* Coral */
+    --secondary-color: #FF9F1C; /* Bright Orange */
+    --accent-color: #FFD166; /* Soft Yellow */
+    --background-color: #FFF5E8; /* Light Peach */
+    --text-color: #2E2E2E; /* Dark Gray */
+    --text-light: #FFFFFF; /* White */
+    --border-color: #E0C9B8; /* Light Beige */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --hover-color: rgba(255, 111, 97, 0.8); /* Semi-transparent Coral */
+}
+:root {
+    --primary-color: #1A73E8; /* Google Blue - Primary color */
+    --secondary-color: #34A853; /* Google Green - Secondary color */
+    --accent-color: #FBBC05; /* Google Yellow - Accent color */
+    --background-color: #FFFFFF; /* White background */
+    --text-color: #202124; /* Dark gray for text */
+    --text-light: #FFFFFF; /* White for text on dark backgrounds */
+    --border-color: #E0E0E0; /* Light gray for borders */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --hover-color: rgba(26, 115, 232, 0.8); /* Semi-transparent blue for hover effects */
+}
+
+:root {
+    --primary-color: #2E86AB; /* Ocean Blue */
+    --secondary-color: #4ECDC4; /* Turquoise */
+    --accent-color: #F7FFF7; /* Light Mint */
+    --background-color: #F0F7F4; /* Pale Blue */
+    --text-color: #1A1A1A; /* Dark Gray */
+    --text-light: #FFFFFF; /* White */
+    --border-color: #C4D7D1; /* Light Gray */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --hover-color: rgba(46, 134, 171, 0.8); /* Semi-transparent Ocean Blue */
+}
+
+:root {
+    --primary-color: #4A7C59; /* Forest Green */
+    --secondary-color: #8A9B6E; /* Olive Green */
+    --accent-color: #D4A373; /* Warm Brown */
+    --background-color: #F4F4E9; /* Light Beige */
+    --text-color: #2E2E2E; /* Dark Gray */
+    --text-light: #FFFFFF; /* White */
+    --border-color: #C4C4A8; /* Light Olive */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --hover-color: rgba(74, 124, 89, 0.8); /* Semi-transparent Forest Green */
+}
+:root {
+    --primary-color: #6C63FF; /* Vibrant Purple */
+    --secondary-color: #FF6584; /* Pink */
+    --accent-color: #FFD166; /* Soft Yellow */
+    --background-color: #1E1E2E; /* Dark Navy */
+    --text-color: #E0E0E0; /* Light Gray */
+    --text-light: #FFFFFF; /* White */
+    --border-color: #3E3E5E; /* Dark Purple */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    --hover-color: rgba(108, 99, 255, 0.8); /* Semi-transparent Purple */
+}
+
+:root {
+    
+    --primary-color: #A8D8EA; /* Pastel Blue */
+    --secondary-color: #FF9AA2; /* Pastel Pink */
+    --accent-color: #FFDAC1; /* Pastel Peach */
+    --background-color: #F7F7F7; /* Light Gray */
+    --text-color: #4A4A4A; /* Medium Gray */
+    --text-light: #FFFFFF; /* White */
+    --border-color: #D4D4D4; /* Light Gray */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --hover-color: rgba(168, 216, 234, 0.8); /* Semi-transparent Pastel Blue */
+
+}
+
+/* others are in eylocoin colour theme suggestions */

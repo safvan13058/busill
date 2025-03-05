@@ -6,15 +6,17 @@
 </head>
 
 <body>
-    <h2>Signup</h2>
+   
     <form method="POST">
+        <h2>Signup</h2>
         {% csrf_token %}
         <input type="text" name="username" placeholder="Username" required><br>
         <input type="password" name="password" placeholder="Password" required><br>
         <input type="password" name="confirm_password" placeholder="Confirm Password" required><br>
+        <p style="color: black;">Already have an account? <a style="color: black;" href="{% url 'login' %}">Login</a></p>
         <button type="submit">Sign Up</button>
     </form>
-    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+   
     <style>
         /* General Styles */
         body {

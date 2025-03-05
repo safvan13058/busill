@@ -36,15 +36,26 @@
 
         <!-- -------------------------------bottom bar----------------------------------------- -->
      
-     <div class="bottombar">
-        <div class="bottombtn">
-            <div> <a href="{% url 'indexpage' %}"> <img src="{%static 'app1/pic/home.png'%}" alt=""></a></div>
-            <div> <a href="{% url 'mappage' %}"><img src="{%static 'app1/pic/map.png'%}" alt=""></a></div>
-            <div> <a href="{% url 'buspage' %}"><img src="{%static 'app1/pic/bus-alt.png'%}" alt=""></a></div>
-            <div> <a href="{% url 'profilepage' %}"><img src="{%static 'app1/pic/user.png'%}" alt=""></a></div>
+        <div class="bottombar">
+            <div class="bottombtn">
+                <a href="{% url 'indexpage' %}" class="nav-item">
+                    <img src="{% static 'app1/pic/home.png' %}" alt="Home">
+                    <span>Home</span>
+                </a>
+                <a href="{% url 'mappage' %}" class="nav-item">
+                    <img src="{% static 'app1/pic/map.png' %}" alt="Map">
+                    <span>Map</span>
+                </a>
+                <a href="{% url 'buspage' %}" class="nav-item">
+                    <img src="{% static 'app1/pic/bus-alt.png' %}" alt="Bus">
+                    <span>Bus</span>
+                </a>
+                <a href="{% url 'profilepage' %}" class="nav-item">
+                    <img src="{% static 'app1/pic/user.png' %}" alt="Profile">
+                    <span>Profile</span>
+                </a>
+            </div>
         </div>
-
-     </div>
 
     </nav>
 
@@ -54,6 +65,7 @@
     <!-- <script src="{% static 'app1/js/currentlocation.js' %}"></script> -->
     <!-- <script src="{% static 'app1/js/locmap.js' %}"></script> -->
     <script src="{% static 'app1/js/singlebus.js' %}"></script>
+    <script src="{% static 'app1/js/common.js' %}"></script>
     <!-- <script src="{% static 'app1/js/getloc.js' %}"></script> -->
 
     <script>

@@ -1,244 +1,284 @@
+/* Define CSS Variables for Color Theme */
+/* Define CSS Variables for New Color Theme */
+:root {
+    --primary-color: #FFFFFF; /* Pure White */
+    --secondary-color: #FF4500; /* Orange Red */
+    --accent-color: #FFA500; /* Bright Orange */
+    --background-color: #FFF8F0; /* Soft Cream */
+    --text-color: #2E2E2E; /* Deep Gray */
+    --text-light: #2E2E2E; /* White */
+    --border-color: #FFDAB9; /* Peach */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --hover-color: rgba(255, 69, 0, 0.8); /* Semi-transparent Orange */
+}
 
-*{
+
+
+
+/* General Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin-bottom: 100px;
 }
-.navbar{
-    height:60px;
-    /* height:80px; */
+
+/* Navbar */
+.navbar {
+    height: 60px;
     width: 100%;
-    /* background-color:rgba(66, 26, 226, 1); */
-    background-color: #20005B;
-    /* background-color: red; */
-    align-content: end;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-}
-.nav{
+    background-color: var(--primary-color);
+    box-shadow: var(--shadow);
     display: flex;
-    justify-content: space-between; 
-    margin-left:10px ;
-    margin-right:10px ;
-    align-items: end;
-    margin-bottom: 15px;
-    
-}
-.loc{
-    display: flex;
-    flex-direction: row;
     align-items: center;
+    padding: 0 20px;
 }
-.loclogo img{
-    height: 25px;
-    width: 25px;
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
-.locname{
-    color:white;
-}
-.logo{
-    color:white;
-    /* color:#4A3F35; */
-    font-size: 25px;
-    /* font-style: italic; */
-    /* font-family: 'Roboto', sans-serif;
-    font-weight: 800; */
-    /* font-family: 'Poppins', sans-serif; */
-    font-weight: 900; /* Black weight */
-    /* font-style: italic; Italic style */
-    margin-bottom: -5px;
-}
+
 .logs {
     display: flex;
-    flex-direction: row;
-    align-items: end;
+    align-items: center;
+    gap: 10px;
 }
-.logs img{
+
+.logs img {
     width: 40px;
     height: 40px;
 }
-/* ---------------------nav end------------------------------ */
-.ftos{
+
+.logo {
+    color: var(--text-light);
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.loc {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.loclogo img {
+    width: 25px;
+    height: 25px;
+}
+
+.locname {
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+/* From-To Section */
+.ftos {
     width: 100%;
     position: absolute;
     margin-top: 10px;
     display: flex;
-    z-index: 3;
     justify-content: center;
-    /* background-color: red; */
-   
+    z-index: 3;
 }
-.fto{
+
+.fto {
+    background-color: var(--primary-color);
     border-radius: 14px;
     width: 370px;
     height: 150px;
-    /* background-color:rgba(66, 26, 226, 1); */
-    background-color: #20005B;
     display: flex;
-    flex-direction:column ;
-    gap:10px;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-    
-
-}
-.from{
-    display:flex;
-    flex-direction: row;
-    align-items:center ;
     gap: 10px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
 
+.from, .to {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 }
-.from p{
-    color: white;
+
+.from p, .to p {
+    color: var(--text-light);
+    font-weight: 900;
+    min-width: 50px;
 }
-.from input{
-    padding-left:10px ;
+
+.from input, .to input {
+    flex: 1;
+    padding: 10px;
     border-radius: 50px;
-    width: 227px;
-    height: 28px;
     border: none;
+    font-size: 14px;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
-.from img{
-      width: 25px;
-      height: 25px;
-}
-.from p{
-    font-weight:900;
-}
-.to img{
+
+.from img, .to img {
     width: 25px;
     height: 25px;
+    cursor: pointer;
 }
-.to{
-    margin-left: 18px;
-    display: flex;
-    flex-direction: row;
-    align-items:center ;
-    gap:10px;
-}
-.to input{
-    padding-left: 10px;
-    border-radius: 50px;
-    width: 227px;
-    height: 28px;
-    border: none;
-}
-.to p{
-    font-weight:900;
-    color: white;
-}
-.btn button{
-    padding: 5px 20px;
-    font-weight: 800;
-    border-radius: 50px;
-    border: none;
-}
-/* ------------------------------------------------end from to------------------------------ */
-/* --------------------bottom bar----------------------------- */
-.bottombar{
-    border-top:1px solid ;
-    z-index: 1000;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    align-content: center;
-    height: 65px;
-    /* background-color:rgba(66, 26, 226, 1) ; */
-    background-color: #20005B ;
-}
-.bottombtn div{
-    background-color: white;
-    padding: 8px;
-    border-radius: 8px;
-    border: 1px solid;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: 1s ease-in-out;
-}
-.bottombtn div:hover{
-    background-color: rgba(64, 64, 237,.8);
-}
-.bottombtn div a img{
-    width: 30px;
-    height: 30px;
-}
-.bottombtn{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    
-}
-/* =--------------------------end bottom bar----------------------- */
 
-.map{
-    overflow: hidden;
+.btn button {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Map Section */
+.map {
     width: 100%;
     height: 700px;
-    position:relative;
-}
-.map iframe{
-    width: 100%;
-    height: 100%;
-}
-
-
-/* -------------- */
- /* Custom InfoWindow Styles */
- .gm-style-iw {
- 
-    background-color: #f9f9f9; /* Light gray background */
-    border: 2px solid #4285F4; /* Blue border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    font-size: 14px;
-    font-weight: bold;
-    padding: 10px; /* Add padding to the content */
+    position: relative;
+    margin-top: 160px; /* Adjust based on the height of the .ftos section */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
-/* Style for the close button */
-.gm-ui-hover-effect {
-    width: 24px ; /* Adjust size */
-    height: 24px ;
-    border-radius: 50%; /* Make it circular */
-    background-color: #4285F4; /* Blue background */
-    color: #fff; 
-    /* White close icon */
-    /* display: flex;
+/* Bottom Navigation Bar */
+/* Bottom Navigation Bar */
+/* 🌙 Neumorphic Bottom Bar */
+/* ⚪ Clean White Bottom Bar */
+.bottombar {
+    position: fixed;
+    bottom: 15px; /* Slight elevation */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 600px;
+    background: #ffffff; /* Pure white background */
+    height: 75px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: center; */
-    /* margin-top: -10px !important; */
-    cursor: pointer;
-}
-
-.gm-ui-hover-effect:hover {
-    background-color: #357ae8; /* Darker blue on hover */
-}
-
-/* Add a custom close icon */
-/* .gm-ui-hover-effect::before {
-    content: "✖"; /* Unicode for close icon */
-    /* font-size: 14px; */
-/* } */ 
-/* -----------------location suggestions--------------------- */
-.suggestions {
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-height: 150px;
-    overflow-y: auto;
-    width: 200px;
+    border-radius: 20px; /* Smooth rounded edges */
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1),
+                -8px -8px 16px rgba(255, 255, 255, 0.8); /* Neumorphic soft depth */
     z-index: 1000;
-    display: none; /* Hidden by default */
+    transition: all 0.3s ease-in-out;
 }
 
-.suggestions div {
-    padding: 10px;
-    cursor: pointer;
+/* 🌟 Navigation Buttons */
+.bottombtn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
 }
 
-.suggestions div:hover {
-    background-color: #f0f0f0;
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333; /* Dark gray for better contrast */
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 14px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* 🎨 Icon Styling */
+.nav-item img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 3px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+.nav-item span {
+    font-size: 12px;
+    color: #555; /* Slightly darker for readability */
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 🟢 Hover Effect */
+.nav-item:hover {
+    transform: translateY(-3px);
+}
+
+.nav-item:hover img {
+    filter: brightness(1.2);
+}
+
+.nav-item:hover span {
+    opacity: 1;
+}
+
+/* 🔵 Active State - Raised Button Effect */
+.nav-item.active {
+    background: #f0f0f0; /* Light gray for an active effect */
+    color: #000; /* Darker text */
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 10px rgba(255, 255, 255, 1); /* Neumorphic inner depth */
+    transform: scale(1.05);
+}
+
+/* 🎯 Active Item Icon & Text */
+.nav-item.active img {
+    filter: brightness(1.3);
+}
+
+.nav-item.active span {
+    opacity: 1;
+    font-weight: bold;
+}
+
+/* 🔴 Subtle Glow Indicator */
+.nav-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 10px;
+    height: 10px;
+    background: #333; /* Dark indicator */
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    animation: glow-pulse 1.5s infinite ease-in-out;
+}
+
+/* ✨ Pulse Glow Effect */
+@keyframes glow-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
 }
